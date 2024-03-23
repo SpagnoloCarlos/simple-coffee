@@ -1,0 +1,109 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+main {
+  min-height: 100vh;
+  background: url("../assets/bg-cafe.jpg") no-repeat top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 64px;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1080px;
+  width: 100%;
+  background-color: var(--bg-body-color);
+  padding: 0 128px 70px 128px;
+  border-radius: 20px;
+  margin: 160px 0;
+}
+
+main > section > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  max-width: 500px;
+  background: url("../assets/vector.svg") no-repeat;
+  background-position: top 0 right 0;
+  background-size: auto;
+  margin-top: 24px;
+  padding-top: 46px;
+}
+
+main > section > header > h1 {
+  font-size: 32px;
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+main > section > header > h3 {
+  font-size: 16px;
+  color: var(--text-gray);
+  font-weight: 400;
+}
+
+main > section > header > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+main > section > header > div > button {
+  appearance: none;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--text-white);
+  transition: background 0.2s ease-out;
+}
+
+main > section > header > div > button:hover {
+  cursor: pointer;
+  background-color: #6e757d;
+}
+
+main > section > header > div > button[data-selected="yes"] {
+  background-color: #6e757d;
+}
+
+main > section > ul {
+  margin: 32px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(250px, 0.33fr));
+  grid-template-rows: min-content;
+  gap: 64px 32px;
+}
+
+@media (max-width: 1024px) {
+  main > section > ul {
+    grid-template-columns: repeat(2, minmax(200px, 250px));
+  }
+}
+
+@media (max-width: 640px) {
+  main > section {
+    padding: 0 32px 70px 32px;
+  }
+  main > section > ul {
+    grid-template-columns: repeat(1, minmax(200px, 250px));
+  }
+}
